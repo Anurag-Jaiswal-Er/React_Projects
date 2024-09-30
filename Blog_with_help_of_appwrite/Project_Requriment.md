@@ -35,6 +35,12 @@ VITE_APPWRITE_BUCKET_ID = " " // Image upload krne ke liye
  - after create Attribute 
  - after create index
 
+ ### Now rest part of Appwriter read with documentation 
+ - like create client handel auth etc
+ - use JWT login
+
+
+
 
 
  
