@@ -1,6 +1,6 @@
 import Conf from "../conf/Conf";
 import { Client, Account, ID } from "appwrite";
-
+// future mai kbhi bhi is snippet ko use kr skte h hm apne projects ke liye
 export class AuthService {
   client = new Client();
   account;
