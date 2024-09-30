@@ -1,4 +1,5 @@
 function App() {
+  console.log(import.meta.env.VITE_APPWRITE_URL);
   return (
     <>
       <h1 className="text-white bg-gray-700 m-4 p-4 text-3xl text-center">
