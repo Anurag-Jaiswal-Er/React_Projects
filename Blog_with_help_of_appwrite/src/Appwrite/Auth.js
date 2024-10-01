@@ -1,13 +1,14 @@
-import Conf from "../conf/Conf";
+import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
-// future mai kbhi bhi is snippet ko use kr skte h hm apne projects ke liye
+
 export class AuthService {
   client = new Client();
   account;
+
   constructor() {
     this.client
-      .setEndpoint(Conf.appwriteUrl)
-      .setProject(Conf.appwriteProjectId);
+      .setEndpoint(conf.appwriteUrl)
+      .setProject(conf.appwriteProjectId);
     this.account = new Account(this.client);
   }
 
@@ -29,6 +30,7 @@ export class AuthService {
       throw error;
     }
   }
+
   async login({ email, password }) {
     try {
       return await this.account.createEmailPasswordSession(email, password);
@@ -36,12 +38,14 @@ export class AuthService {
       throw error;
     }
   }
+
   async getCurrentUser() {
     try {
       return await this.account.get();
     } catch (error) {
-      console.log("AppWrite Server :: getCurrentUser :: error ", error);
+      console.log("Appwrite serive :: getCurrentUser :: error", error);
     }
+
     return null;
   }
 
@@ -49,7 +53,7 @@ export class AuthService {
     try {
       await this.account.deleteSessions();
     } catch (error) {
-      console.log("AppWrite server :: logout :: error", error);
+      console.log("Appwrite serive :: logout :: error", error);
     }
   }
 }
